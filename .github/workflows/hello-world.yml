@@ -7,4 +7,5 @@ jobs:
     steps:                 # List of steps for the runner to do
       - name: Checkout Repo Code (First Step) # First Step
         uses: actions/checkout@v4
-      - run: echo "$(cat hello_world.txt)"
+      - name: Read Hello World Text File
+        run: echo "$(cat hello_world.txt)"
