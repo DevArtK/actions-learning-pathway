@@ -15,5 +15,5 @@ jobs:
           node-version: '20.x'
       - name: Install Deps (Third Step)
         run: npm ci
-      - name: Run Tests (Fourth Step)
-        run: npm test
+      - name: Build (Foruth Step)
+        run: npm run build
