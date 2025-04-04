@@ -1,11 +1,19 @@
-name: Hello World
-
+name: Hello World Workflow
 on: push
+
 jobs:
   First-Job-Name:
     runs-on: ubuntu-latest # Runner for the job
     steps:                 # List of steps for the runner to do
-      - name: Checkout Repo Code (First Step) # First Step
+      - name: Checkout Repo Code (First Step)
         uses: actions/checkout@v4
       - name: Read Hello World Text File (Second Step)
         run: echo "$(cat hello_world.txt)"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: Install Deps (Third Step)
+        run: npm ci
+      - name: Run Tests (Fourth Step)
+        run: npm test
