@@ -1,0 +1,10 @@
+name: Hello World
+
+on: push
+jobs:
+  First-Job-Name:
+    runs-on: ubuntu-latest # Runner for the job
+    steps:                 # List of steps for the runner to do
+      - name: Checkout Repo Code (First Step) # First Step
+        uses: actions/checkout@v4
+      - run: echo "$(cat hello_world.txt)"
